@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
+var articles = {
+    'articleOne' : {
     title: 'Article One | Praveen Raghav',
     heading: 'Article One',
     date: 'Sep 25,2016',
@@ -19,6 +20,30 @@ This is the content for my first article. This is the content for my first artic
     This is the content for my first article. This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
 </p>`
     
+},
+    'articleTwo' : {
+     title: 'Article Two | Praveen Raghav',
+    heading: 'Article Two',
+    date: 'Sep 5,2016',
+    Content:`<p>
+This is the content for my first article. This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
+</p>
+<p>
+     This is the content for my first article. This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
+</p>
+`
+    
+    },
+    'articleThree' : {
+     title: 'Article Three | Praveen Raghav',
+    heading: 'Article Three',
+    date: 'Sep 25,2016',
+    Content:`<p>
+This is the content for my first article. This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
+</p>
+`
+    
+    } 
 };
 function createtemplate (data) {
     var title = data.title;
@@ -61,12 +86,11 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function(req, res) {
-    res.send(createtemplate(articleOne))
-});
-
-app.get('/article-two', function(req, res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+app.get('/:articleName', function(req, res) {
+    //articleName == article-one
+    //articles[articleName] == {} content object for article one
+    var articleName = req.params.articleName;
+    res.send(createtemplate(articles[articleName]));
 });
 
 app.get('/article-three', function(req, res) {
