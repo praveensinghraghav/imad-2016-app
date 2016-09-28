@@ -22,10 +22,10 @@ This is the content for my first article. This is the content for my first artic
     
 },
     'article-two' : {
-     title: 'Article Two | Praveen Raghav',
-    heading: 'Article Two',
-    date: 'Sep 5,2016',
-    Content:`<p>
+     title : 'Article Two | Praveen Raghav',
+    heading : 'Article Two',
+    date : 'Sep 5,2016',
+    Content :`<p>
 This is the content for my first article. This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
 </p>
 <p>
@@ -35,10 +35,10 @@ This is the content for my first article. This is the content for my first artic
     
     },
     'article-three' : {
-     title: 'Article Three | Praveen Raghav',
-    heading: 'Article Three',
-    date: 'Sep 25,2016',
-    Content:`<p>
+     title : 'Article Three | Praveen Raghav',
+    heading : 'Article Three',
+    date : 'Sep 25,2016',
+    Content :`<p>
 This is the content for my first article. This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
 </p>
 `
@@ -80,7 +80,7 @@ var htmlTemplate = `
     </body>
 </html>
 `;
-return htmltemplate;
+return htmlTemplate;
 }
 
 app.get('/', function (req, res) {
