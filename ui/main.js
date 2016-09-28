@@ -1,6 +1,6 @@
 console.log('Loaded!');
 //change text to main-text
-document.getElementById("main").innerHTML = "New Value"; 
+document.getElementById('main').innerHTML="New Value"; 
 
 //move the image
 var img=document.getElementById('raghav');
